@@ -23,12 +23,14 @@ unstow package:
 
 [confirm('Are you sure you want to stow all packages? y/n')]
 stow-all:
+  #!/bin/bash
   for pkg in {{packages}}; do
     just stow $pkg
   done
 
 [confirm('Are you sure you want to unstow all packages? y/n')]
 unstow-all:
+  #!/bin/bash
   for pkg in {{packages}}; do
     just unstow $pkg
   done
