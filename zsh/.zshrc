@@ -60,7 +60,7 @@ fi
 
 # !! Contents within this block are managed by juliaup !!
 
-path=('/home/acampbell/.juliaup/bin' $path)
+path=("$HOME/.juliaup/bin" $path)
 export PATH
 
 # <<< juliaup initialize <<<
@@ -71,9 +71,12 @@ if [ -d "$HOME/.luarocks" ]; then
 fi
 
 # pnpm
-export PNPM_HOME="/home/acampbell/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
