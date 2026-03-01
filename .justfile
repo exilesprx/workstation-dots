@@ -2,7 +2,7 @@ set shell := ["bash", "-c"]
 set ignore-comments
 
 target := "$HOME"
-packages := "nvim git zsh alacritty bat starship eza lazygit delta lsd zellij btop go ssh wallpapers zim"
+packages := "nvim git zsh alacritty bat starship eza lazygit delta zellij btop go ssh wallpapers zim"
 
 default: help
 
