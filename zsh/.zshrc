@@ -74,6 +74,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-[ -f "$HOME/.zsh_aliases" ] && source "$HOME/.zsh_aliases"
 [ -f "$HOME/.zsh_exports" ] && source "$HOME/.zsh_exports"
 [ -f "$HOME/.zsh_functions" ] && source "$HOME/.zsh_functions"
+[ -f "$HOME/.zsh_aliases" ] && source "$HOME/.zsh_aliases"
