@@ -1,12 +1,29 @@
 #!/bin/zsh
 
 # Aliases
-alias ls='eza --icons=always --color=always'
-alias ll='eza --icons=always --color=always -la'
-alias l='eza --icons=always --color=always -l'
-alias lt='eza --icons=always --color=always --tree'
-alias vim='nvim'
-alias cat='bat'
-alias zel='zellij'
-alias cd='z'
-alias grep='rg'
+if command -v eza &>/dev/null; then
+  alias ls='eza --icons=always --color=always'
+  alias ll='eza --icons=always --color=always -la'
+  alias l='eza --icons=always --color=always -l'
+  alias lt='eza --icons=always --color=always --tree'
+fi
+
+if command -v nvim &>/dev/null; then
+  alias vim='nvim'
+fi
+
+if command -v bat &>/dev/null; then
+  alias cat='bat'
+fi
+
+if command -v zellij &>/dev/null; then
+  alias zel='zellij'
+fi
+
+if command -v z &>/dev/null; then
+  alias cd='z'
+fi
+
+if command -v rg &>/dev/null; then
+  alias grep='rg'
+fi

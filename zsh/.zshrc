@@ -8,10 +8,6 @@ setopt sharehistory histignorealldups
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-[ -f "$HOME/.zsh_aliases" ] && source "$HOME/.zsh_aliases"
-[ -f "$HOME/.zsh_exports" ] && source "$HOME/.zsh_exports"
-[ -f "$HOME/.zsh_functions" ] && source "$HOME/.zsh_functions"
-
 # cargo/rust
 if [ -d "$HOME/.cargo/bin" ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
@@ -78,5 +74,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# opencode
-export PATH="$HOME/.opencode/bin:$PATH"
+[ -f "$HOME/.zsh_aliases" ] && source "$HOME/.zsh_aliases"
+[ -f "$HOME/.zsh_exports" ] && source "$HOME/.zsh_exports"
+[ -f "$HOME/.zsh_functions" ] && source "$HOME/.zsh_functions"

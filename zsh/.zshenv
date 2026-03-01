@@ -2,4 +2,7 @@
 
 
 # uv
-export PATH="/home/acampbell/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
