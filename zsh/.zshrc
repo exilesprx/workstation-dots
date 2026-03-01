@@ -39,6 +39,7 @@ if [ -f "$HOME/.cargo/bin/starship" ]; then
 fi
 
 # Zim
+ZIM_HOME="$HOME/.zim"
 if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
   source ${ZIM_HOME}/zimfw.zsh init -q
 fi
