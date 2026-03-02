@@ -1,3 +1,5 @@
+typeset -U path
+
 # Keep 5000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=5000
 SAVEHIST=5000
@@ -8,9 +10,14 @@ setopt sharehistory histignorealldups
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+# Zsh configs
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+export WORDCHARS=${WORDCHARS//[\/]}
+
 # cargo/rust
 if [ -d "$HOME/.cargo/bin" ]; then
-  export PATH="$HOME/.cargo/bin:$PATH"
+  path=("$HOME/.cargo/bin" $path)
 fi
 
 # fnm
@@ -25,12 +32,12 @@ fi
 
 if [ -d /opt/goenv ]; then
   export GOENV_ROOT="/opt/goenv"
-  export PATH="$GOENV_ROOT/bin:$PATH"
+  path=("$GOENV_ROOT/bin" $path)
   eval "$(goenv init -)"
 fi
 
 if [ -n "$GOPATH" ] && [ -d "$GOPATH/bin" ]; then
-  export PATH="$GOPATH/bin:$PATH"
+  path=("$GOPATH/bin" $path)
 fi
 
 # Starship
@@ -53,28 +60,28 @@ if [ -f "$HOME/.cargo/bin/zoxide" ]; then
   eval "$(zoxide init zsh)"
 fi
 
-# >>> juliaup initialize >>>
-
-# !! Contents within this block are managed by juliaup !!
-
-path=("$HOME/.juliaup/bin" $path)
-export PATH
-
-# <<< juliaup initialize <<<
+if [ -d "$HOME/.juliaup/bin" ]; then
+  path=("$HOME/.juliaup/bin" $path)
+fi
 
 # Lua
 if [ -d "$HOME/.luarocks" ]; then
-  export PATH="$HOME/.luarocks/bin:$PATH"
+  path=("$HOME/.luarocks/bin" $path)
 fi
 
 # pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+if [ -d "$HOME/.local/share/pnpm" ]; then
+  path=("$HOME/.local/share/pnpm" $path)
+fi
 
-[ -f "$HOME/.zsh_exports" ] && source "$HOME/.zsh_exports"
+if [ -d "$HOME/.local/bin" ]; then
+  path=("$HOME/.local/bin" $path)
+fi
+
+# opencode
+if [ -d "$HOME/.opencode/bin" ]; then
+  path=("$HOME/.opencode/bin" $path)
+fi
+
 [ -f "$HOME/.zsh_functions" ] && source "$HOME/.zsh_functions"
 [ -f "$HOME/.zsh_aliases" ] && source "$HOME/.zsh_aliases"

@@ -1,8 +1,5 @@
-. "$HOME/.cargo/env"
-
-
-# uv
-export PATH="$HOME/.local/bin:$PATH"
-
-# opencode
-export PATH="$HOME/.opencode/bin:$PATH"
+export TERM="xterm-256color"
+export EDITOR="nvim"
+export VISUAL="kate"
+export MANPAGER="nvim +Man!"
+export ANDROID_SDK_ROOT="/opt/android-sdk"
