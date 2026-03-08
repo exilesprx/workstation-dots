@@ -1,3 +1,4 @@
+. "$HOME/.cargo/env"
 export TERM="xterm-256color"
 export EDITOR="nvim"
 export VISUAL="kate"
