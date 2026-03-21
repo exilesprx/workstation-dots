@@ -4,19 +4,22 @@ return {
   lazy = true,
   cmd = "ConformInfo",
   opts = {
-    ---@type table<string, conform.FormatterUnit[]>
     formatters_by_ft = {
-      ["css"] = { "prettier" },
-      ["html"] = { "prettier" },
-      ["javascript"] = { "prettier" },
-      ["json"] = { "prettier" },
       ["lua"] = { "stylua" },
-      ["markdown"] = { "prettier" },
       ["php"] = { "php_cs_fixer" },
-      ["typescript"] = { "prettier" },
       ["sh"] = { "shfmt" },
-      ["vue"] = { "prettier" },
-      ["yaml"] = { "prettier" },
+    },
+    formatters = {
+      oxfmt = {
+        condition = function(self, ctx)
+          return vim.fs.find({ ".oxfmtrc.json", ".oxfmtrc.jsonc" }, { path = ctx.filename, upward = true })[1]
+        end,
+      },
+      prettier = {
+        condition = function(self, ctx)
+          return vim.fs.find({ ".prettierrc.json" }, { path = ctx.filename, upward = true })[1]
+        end,
+      },
     },
   },
 }
