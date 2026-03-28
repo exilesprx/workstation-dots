@@ -15,6 +15,13 @@ export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 export WORDCHARS=${WORDCHARS//[\/]}
 
+# Android sdk
+if [ -d "$HOME/.local/share/android-sdk" ]; then
+  export ANDROID_SDK_ROOT="$HOME/.local/share/android-sdk"
+  path=("$ANDROID_SDK_ROOT/cmdline-tools/latest/bin" $path)
+  path=("$ANDROID_SDK_ROOT/platform-tools" $path)
+fi
+
 # cargo/rust
 if [ -d "$HOME/.cargo/bin" ]; then
   path=("$HOME/.cargo/bin" $path)
