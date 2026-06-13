@@ -77,8 +77,8 @@ if [ -d "$HOME/.luarocks" ]; then
 fi
 
 # pnpm
-if [ -d "$HOME/.local/share/pnpm" ]; then
-  path=("$HOME/.local/share/pnpm" $path)
+if [ -d "$HOME/.local/share/pnpm/bin" ]; then
+  path=("$HOME/.local/share/pnpm/bin" $path)
 fi
 
 if [ -d "$HOME/.local/bin" ]; then
