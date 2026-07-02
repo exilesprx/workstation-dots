@@ -4,6 +4,7 @@ return {
     opts = {
       ensure_installed = {
         "ansible-language-server",
+        "bash-language-server",
         "elixir-ls",
         "lua-language-server",
         "phpactor",
