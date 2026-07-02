@@ -12,6 +12,11 @@ bindkey "^[[1;5D" backward-word
 bindkey '^[^?' backward-kill-word
 bindkey '^[^H' backward-kill-word
 
+# Fall back to xterm-256color on remote systems that lack the local terminfo
+if ! infocmp "$TERM" &>/dev/null 2>&1; then
+  export TERM="xterm-256color"
+fi
+
 # Zsh configs
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
