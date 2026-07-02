@@ -9,6 +9,8 @@ setopt sharehistory histignorealldups
 # Key binds
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey '^[^?' backward-kill-word
+bindkey '^[^H' backward-kill-word
 
 # Zsh configs
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
