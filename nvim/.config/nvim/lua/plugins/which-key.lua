@@ -7,7 +7,21 @@ return {
         { "<leader>z", group = "Lua" },
         { "<leader>zl", ":.lua<CR>", desc = "Source line", mode = "n" },
         { "<leader>zf", "<cmd>source %<CR>", desc = "Source file", mode = "n" },
-        { "<leader>e", "<cmd>Oil<CR>", desc = "Open current directory", icon = "󰏇", mode = "n" },
+        -- { "<leader>e", "<cmd>Oil<CR>", desc = "Open current directory", icon = "󰏇", mode = "n" },
+        {
+          "<leader>e",
+          function()
+            require("mini.files").open(vim.uv.cmd(), true)
+          end,
+          desc = "Open current directory",
+        },
+        {
+          "<leader>E",
+          function()
+            require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
+          end,
+          desc = "Open current file directory",
+        },
       },
     },
   },
