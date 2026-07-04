@@ -11,7 +11,7 @@ return {
         {
           "<leader>e",
           function()
-            require("mini.files").open(vim.uv.cmd(), true)
+            require("mini.files").open(vim.uv.cwd(), true)
           end,
           desc = "Open current directory",
         },
