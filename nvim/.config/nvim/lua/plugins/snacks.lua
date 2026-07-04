@@ -9,10 +9,6 @@ return {
             ignored = false,
           },
         },
-        enabled = true,
-        input = {
-          enabled = true,
-        },
       },
     },
   },
