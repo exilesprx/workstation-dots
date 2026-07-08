@@ -1,3 +1,4 @@
+#!/bin/zsh
 typeset -U path
 
 # Keep 5000 lines of history within the shell and save it to ~/.zsh_history:
@@ -30,7 +31,7 @@ fi
 
 # fnm
 if [ -f "$HOME/.cargo/bin/fnm" ]; then
-  eval "`fnm env`"
+  eval "$(fnm env)"
 fi
 
 # Ghcup
