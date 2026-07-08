@@ -23,6 +23,7 @@ return {
         "vue",
         "yaml",
         "zig",
+        "zsh",
       },
     },
   },
