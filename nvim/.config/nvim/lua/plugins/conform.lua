@@ -8,7 +8,7 @@ return {
       ["lua"] = { "stylua" },
       ["php"] = { "php_cs_fixer" },
       ["sh"] = { "shfmt" },
-      ["zsh"] = { "shfmt" },
+      ["zsh"] = { "beautysh" },
     },
     formatters = {
       oxfmt = {

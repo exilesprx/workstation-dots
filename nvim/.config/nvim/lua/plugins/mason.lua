@@ -5,6 +5,7 @@ return {
       ensure_installed = {
         "ansible-language-server",
         "bash-language-server",
+        "beautysh",
         "elixir-ls",
         "lua-language-server",
         "phpactor",
