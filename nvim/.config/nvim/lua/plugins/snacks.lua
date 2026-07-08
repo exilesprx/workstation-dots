@@ -11,7 +11,7 @@ return {
           grep = {
             hidden = true,
             ignored = false,
-          }
+          },
         },
       },
     },
