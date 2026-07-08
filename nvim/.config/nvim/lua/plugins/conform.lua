@@ -12,12 +12,12 @@ return {
     },
     formatters = {
       oxfmt = {
-        condition = function(self, ctx)
+        condition = function(_, ctx)
           return vim.fs.find({ ".oxfmtrc.json", ".oxfmtrc.jsonc" }, { path = ctx.filename, upward = true })[1]
         end,
       },
       prettier = {
-        condition = function(self, ctx)
+        condition = function(_, ctx)
           return not vim.fs.find({ ".oxfmtrc.json", ".oxfmtrc.jsonc" }, { path = ctx.filename, upward = true })[1]
         end,
       },
