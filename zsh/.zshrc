@@ -29,6 +29,11 @@ if [ -d "$HOME/.cargo/bin" ]; then
     path=("$HOME/.cargo/bin" $path)
 fi
 
+# mise
+if command -v mise &>/dev/null; then
+    eval "$(mise activate zsh)"
+fi
+
 # fnm
 if [ -f "$HOME/.cargo/bin/fnm" ]; then
     eval "$(fnm env)"
