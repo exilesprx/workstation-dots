@@ -2,6 +2,7 @@ set shell := ["bash", "-c"]
 set ignore-comments
 
 target := "$HOME"
+applications := "$HOME/.local/share/applications"
 
 default: help
 
@@ -19,6 +20,9 @@ stow package:
 [confirm('Are you sure you want to unstow the package? y/n')]
 unstow package:
   stow -v --delete --target={{target}} {{package}}
+
+applications:
+  stow -v --adopt --target={{applications}} applications
 
 # Via doesn't work with a symlink, so copy the file
 # to the udev rules directory
