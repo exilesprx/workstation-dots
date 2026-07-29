@@ -23,7 +23,7 @@ unstow package:
 
 applications:
   stow -v --adopt --target={{applications}} applications
-  update-desktop-database {{applications}}
+  sudo update-desktop-database {{applications}}
 
 # Via doesn't work with a symlink, so copy the file
 # to the udev rules directory
