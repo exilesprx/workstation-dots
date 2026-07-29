@@ -2,7 +2,6 @@ set shell := ["bash", "-c"]
 set ignore-comments
 
 target := "$HOME"
-packages := "nvim git zsh alacritty bat starship eza lazygit delta zellij btop go ssh wallpapers zim"
 
 default: help
 
@@ -20,20 +19,6 @@ stow package:
 [confirm('Are you sure you want to unstow the package? y/n')]
 unstow package:
   stow -v --delete --target={{target}} {{package}}
-
-[confirm('Are you sure you want to stow all packages? y/n')]
-stow-all:
-  #!/bin/bash
-  for pkg in {{packages}}; do
-    just stow $pkg
-  done
-
-[confirm('Are you sure you want to unstow all packages? y/n')]
-unstow-all:
-  #!/bin/bash
-  for pkg in {{packages}}; do
-    just unstow $pkg
-  done
 
 # Via doesn't work with a symlink, so copy the file
 # to the udev rules directory
