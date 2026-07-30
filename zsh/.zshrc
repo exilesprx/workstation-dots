@@ -35,7 +35,7 @@ if command -v mise &>/dev/null; then
 fi
 
 # fnm
-if [ -f "$HOME/.cargo/bin/fnm" ]; then
+if command -v fnm &>/dev/null ; then
     eval "$(fnm env)"
 fi
 
@@ -55,7 +55,7 @@ if [ -n "$GOPATH" ] && [ -d "$GOPATH/bin" ]; then
 fi
 
 # Starship
-if [ -f "$HOME/.cargo/bin/starship" ]; then
+if command -v starship &>/dev/null; then
     eval "$(starship init zsh)"
 fi
 
@@ -70,7 +70,7 @@ if [ -f "${ZIM_HOME}/init.zsh" ]; then
 fi
 
 # Zoxide
-if [ -f "$HOME/.cargo/bin/zoxide" ]; then
+if command -v zoxide &>/dev/null; then
     eval "$(zoxide init zsh)"
 fi
 
