@@ -15,10 +15,6 @@
       "model": "opencode/big-pickle",
       "color": "#ff6b6b",
       "system": "Review the git diff for logic errors, edge cases, missing unit tests, and security vulnerabilities. List findings in order of severity.",
-      "permissions": [
-        { "action": "edit", "resource": "*", "effect": "deny" },
-        { "action": "shell", "resource": "git push*", "effect": "deny" },
-      ],
     },
     "q-a": {
       "description": "Codebase-wide comprehension and architectural Q&A",
